@@ -7,7 +7,9 @@ const { getIO, initIO } = require('./socket');
 const app = express();
 
 app.use('/', express.static(path.join(__dirname, 'static')));
-
+app.get('/', (req, res) => {
+    res.send('Welcome to the Node.js API!');
+  });
 const httpServer = createServer(app);
 
 let port = process.env.PORT || 3500;
